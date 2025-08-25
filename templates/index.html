@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iris Flower Species Prediction</title>
+</head>
+<body>
+  <h2>Iris Flower Species Prediction</h2>
+  <form action="/predict" method="post">
+    <label for="modelSelect">Choose a Machine Learning Model:</label>
+    <select name="model_name" id="modelSelect" required>
+      <option value="" disabled selected>Select a model</option>
+      <option value="decision_tree">Decision Tree Model</option>
+      <option value="knn">K Neighbour Classifier</option>
+    </select><br><br>
+
+    Sepal Length: <input type="number" name="sl" step="0.01" min="0"  required><br>
+    Sepal Width: <input type="number" name="sw" step="0.01" min="0" required><br>
+    Petal Length: <input type="number" name="pl" step="0.01" min="0" required><br>
+    Petal Width: <input type="number" name="pw" step="0.01" min="0"  required><br>
+    <button type="submit">Predict</button>
+  </form>
+
+  <h3>Prediction Result:</h3>
+  <div class="result">
+{{prediction_text}}
+</div>
+
+</body>
+</html>
